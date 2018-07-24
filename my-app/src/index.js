@@ -37,11 +37,12 @@ class Board extends React.Component {
   handleClick(i) {
     //If there's a winner or the square is filled with a value,
     //ignore any more clicks
+    const squares = this.state.squares.slice() //Using slice for Immutability
+
     if (calculateWinner(squares) || squares[i]) {
       return
     }
 
-    const squares = this.state.squares.slice() //Using slice for Immutability
     squares[i] = this.state.xIsNext ? 'X' : 'O'
     this.setState({
       squares: squares,
