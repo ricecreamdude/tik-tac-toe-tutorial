@@ -1,0 +1,23 @@
+{
+  "name": "tik-tac-toe-tutorial",
+  "version": "1.0.0",
+  "description": "This is my version of the code for the React.js tutorial found here:",
+  "main": "index.js",
+  "dependencies": {
+    "create-react-app": "^1.5.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ricecreamdude/tik-tac-toe-tutorial.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ricecreamdude/tik-tac-toe-tutorial/issues"
+  },
+  "homepage": "https://github.com/ricecreamdude/tik-tac-toe-tutorial#readme"
+}
