@@ -33,7 +33,14 @@ class Board extends React.Component {
   //To create a state toggle that shifts between clicks,
   // =====xIsNext: !this.state.xIsNext ========
   //is a good trick
+
   handleClick(i) {
+    //If there's a winner or the square is filled with a value,
+    //ignore any more clicks
+    if (calculateWinner(squares) || squares[i]) {
+      return
+    }
+
     const squares = this.state.squares.slice() //Using slice for Immutability
     squares[i] = this.state.xIsNext ? 'X' : 'O'
     this.setState({
@@ -98,21 +105,21 @@ class Game extends React.Component {
 
 //Contains presets for winning conditions in an array.
 //Winning Condition is returning an array
-//Checks to see if
+//Checks to see if any win conditions exist
 function calculateWinner(squares) {
   const lines = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]]
   for (let i = 0; i < lines.length; i++) {
     const [a, b, c] = lines[i]
-    console.log('/////////////////// ', 'Loop ' + lines[i])
-    console.log('Value A: ', a)
-    console.log('Value B: ', b)
-    console.log('Value C: ', c)
+    // console.log('/////////////////// ', 'Loop ' + lines[i])
+    // console.log('Value A: ', a)
+    // console.log('Value B: ', b)
+    // console.log('Value C: ', c)
     if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
-      console.log('WINNER', squares[a])
+      // console.log('WINNER', squares[a])
       return squares[a]
     }
   }
-  console.log('NO WINNER')
+  // console.log('NO WINNER')
   return null
 }
 
